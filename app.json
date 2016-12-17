@@ -1,0 +1,8 @@
+{
+    "name": "yohanesmario-nodetest",
+    "description": "Node.js test app",
+    "repository": "https://github.com/yohanesmario/yohanesmario-nodetest",
+    "logo":"http://node-js-sample.herokuapp.com/node.svg",
+    "keywords": ["node", "express", "static"],
+    "image": "heroku/nodejs"
+}
