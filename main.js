@@ -8,7 +8,7 @@ var queues = {};
 app.get('/sub/:queue', function (req, res) {
     res.setHeader('Content-Type', 'text/html');
     var loop = setInterval(function(){
-        res.write("looptest ");
+        res.write(" ");
         res.flushHeaders();
     },3000);
     if (queues[req.params.queue]==null) {
