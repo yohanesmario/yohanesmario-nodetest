@@ -1,28 +1,20 @@
-// var express = require('express');
-// var app = express();
-//
-// function refresh
-//
-// app.set('port', (process.env.PORT || 5000));
-//
-// app.get('/', function (req, res) {
-//
-// });
-//
-// app.listen(app.get('port'), function(){
-//     console.log('Running on port: '+app.get('port'));
-// });
+var express = require('express');
+var app = express();
 
-const http = require('http');
+app.set('port', (process.env.PORT || 5000));
 
-const port = (process.env.PORT || 5000);
-
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello World!\n');
+app.get('/', function (req, res) {
+    res.setHeader('Content-Type', 'text/html');
+    var loop = setInterval(function(){
+        res.write("longpolling ");
+        res.flushHeaders();
+    },1000);
+    setTimeout(function(){
+        clearInterval(loop);
+        res.end("endlongpolling");
+    },5000);
 });
 
-server.listen(port, () => {
-  console.log('Server running at port ' + port);
+app.listen(app.get('port'), function(){
+    console.log('Running on port: '+app.get('port'));
 });
