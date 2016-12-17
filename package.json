@@ -1,0 +1,14 @@
+{
+  "name": "yohanesmario-nodetest",
+  "version": "1.0.0",
+  "description": "testing node.js on heroku",
+  "main": "main.js",
+  "scripts": {
+    "test": "node main.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
