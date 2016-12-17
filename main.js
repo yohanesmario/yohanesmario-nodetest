@@ -12,7 +12,7 @@ app.get('/sub/:queue', function (req, res){
     var loop = setInterval(function(){
         res.write(" ");
         res.flushHeaders();
-    },1000);
+    },60000);
     if (queues[req.params.queue]==null) {
         queues[req.params.queue] = [];
     }

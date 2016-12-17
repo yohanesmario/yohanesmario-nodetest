@@ -1,7 +1,7 @@
-var https = require('http');
+var https = require('https');
 var stream = "";
 
-https.get('http://localhost:5000/sub/test', function(res) {
+https.get('https://yohanesmario-nodetest.herokuapp.com/sub/test', function(res) {
     res.on('data', function(d) {
         stream+=d;
         stream = stream.trim();
@@ -10,7 +10,7 @@ https.get('http://localhost:5000/sub/test', function(res) {
             stream = "";
             console.log(data);
         } catch (e) {
-            console.log("[heartbeat]");
+            
         }
     });
 
