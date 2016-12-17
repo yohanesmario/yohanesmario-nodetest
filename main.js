@@ -1,27 +1,28 @@
 // var express = require('express');
 // var app = express();
 //
+// function refresh
+//
 // app.set('port', (process.env.PORT || 5000));
 //
 // app.get('/', function (req, res) {
-//   res.send('Running on port: '+app.get('port'));
+//
 // });
 //
 // app.listen(app.get('port'), function(){
 //     console.log('Running on port: '+app.get('port'));
 // });
-var net = require('net');
 
-var port = (process.env.PORT || 5000);
+const http = require('http');
 
-var server = net.createServer((socket) => {
-  socket.end('Hello world!\n');
-}).on('error', (err) => {
-  // handle errors here
-  throw err;
+const port = (process.env.PORT || 5000);
+
+const server = http.createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  res.end('Hello World!\n');
 });
 
-// grab a random port.
 server.listen(port, () => {
-  console.log('opened server on', server.address());
+  console.log('Server running at port ' + port);
 });
