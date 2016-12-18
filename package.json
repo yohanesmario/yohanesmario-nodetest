@@ -9,11 +9,12 @@
   "author": "Yohanes Mario Chandra (yohanes.mc@gmail.com)",
   "license": "ISC",
   "repository": {
-      "type": "git",
-      "url": "https://github.com/yohanesmario/yohanesmario-nodetest"
+    "type": "git",
+    "url": "https://github.com/yohanesmario/yohanesmario-nodetest"
   },
   "engines": "6.8.1",
   "dependencies": {
+    "body-parser": "^1.15.2",
     "express": "^4.14.0"
   }
 }

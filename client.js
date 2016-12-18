@@ -1,7 +1,10 @@
 var https = require('https');
+// var https = require('http');
 var stream = "";
+var host = 'https://yohanesmario-nodetest.herokuapp.com/topic/test';
+// var host = 'http://localhost:5000/topic/test';
 
-https.get('https://yohanesmario-nodetest.herokuapp.com/sub/test', function(res) {
+https.get(host, function(res) {
     res.on('data', function(d) {
         stream+=d;
         stream = stream.trim();
@@ -10,7 +13,7 @@ https.get('https://yohanesmario-nodetest.herokuapp.com/sub/test', function(res) 
             stream = "";
             console.log(data);
         } catch (e) {
-            
+
         }
     });
 
