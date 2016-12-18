@@ -5,7 +5,7 @@ var postData = JSON.stringify({
 
 var options = {
     hostname: 'yohanesmario-nodetest.herokuapp.com',
-    port: 80,
+    port: 443,
     // hostname: 'localhost',
     // port: 5000,
     path: '/topic/test',
