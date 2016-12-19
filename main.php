@@ -8,6 +8,7 @@
 
 	if ($_SERVER['REQUEST_METHOD']=="GET") {
 		if (isset($_GET['topic'])) {
+            $topic = $_GET['topic'];
 			$loop = true;
 			$time = time();
 			echo " ";
@@ -32,6 +33,7 @@
 		}
 	} else if ($_SERVER['REQUEST_METHOD']=="POST") {
 		if (isset($_GET['topic'])) {
+            $topic = $_GET['topic'];
 			$data = file_get_contents("php://input");
 			file_put_contents(md5($topic).".queue", $data, LOCK_EX);
 			echo json_encode(array("status"=>"OK"));
