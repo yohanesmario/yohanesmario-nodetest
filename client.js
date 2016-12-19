@@ -13,7 +13,7 @@ https.get(host, function(res) {
             stream = "";
             console.log(data);
         } catch (e) {
-
+            console.log("HEARTBEAT");
         }
     });
 

@@ -15,7 +15,7 @@ app.get('/topic/:name', function (req, res){
     var loop = setInterval(function(){
         res.write(" ");
         res.flushHeaders();
-    },60000);
+    },5000);
     if (queues[req.params.name]==null) {
         queues[req.params.name] = [];
     }
